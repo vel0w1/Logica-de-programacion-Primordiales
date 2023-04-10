@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<h2>Calcular IMC del usuario</h2>
+
+<script>
+  
+  function calcular(peso, altura) {
+    return (peso / (altura * altura))   
+  }
+
+  var nombre = prompt("Cual es su nombre?: ")
+  var peso = prompt(nombre, "Escriba su peso: ")
+  var altura = prompt(nombre, "Escriba su altura: ")
+
+  var imc = calcular(peso, altura)
+  document.write(nombre, "su IMC es de: ", imc, "<br><br>")
+
+  if (imc < 18.5) {
+    document.write("Su IMC es mas bajo de lo recomendado")
+  }
+
+  if (imc >= 18.5 && imc < 25) {
+    document.write("Su IMC está dentro de lo recomendado")
+  }
+
+  if (imc >= 25 && imc < 30) {
+    document.write("Su IMC se encuentra en: Sobrepeso ")
+  }
+
+  if (imc >= 30) {
+    document.write("Su IMC se encuentra en: Obesidad")
+  }
+  
+</script>
