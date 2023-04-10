@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<h2>Adivina el numero</h2>
+
+<script>
+  var numero_sistema = Math.round(Math.random() * 10)
+  // La función Math.random() * 10 elige un numero entre el 0 y el 10
+  var numero_usuario = parseInt(prompt("Adivina el numero entre 0 y 10: "))
+
+  if (numero_usuario == numero_sistema) {
+    document.write("Adivinaste!")
+  }
+
+  else {
+    document.write("Numero equivocado, el numero era: ", numero_sistema)
+  }
+</script>
