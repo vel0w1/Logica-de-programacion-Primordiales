@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<h2>Aprobacion para conducir</h2>
+
+<script>
+  var edad = parseInt(prompt("¿Cuál es tu edad?"))
+  var licencia = prompt("¿Tienes licencia? Responde S o N")
+
+  if (edad >= 18 && licencia == "S") {
+    document.write("Esta aprobado para conducir.")
+
+    if (edad >= 18 && licencia == "N") {
+      document.write("Lo sentimos, necesita una licencia para conducir.")
+    }
+  }
+
+  else {
+    document.write("Lo sentimos, usted no tiene aprobacion para conducir.")
+  }
+
+</script>
