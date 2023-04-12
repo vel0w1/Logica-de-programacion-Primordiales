@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<script>
+
+    var usuario = "alura"
+    var password = "alura321"
+
+    var intentos = 3
+    var contador = 1
+
+    while (contador <= intentos) {
+      var iniciosesion = prompt("Ingrese su usuario")
+      var iniciopassword = prompt("Ingrese su contraseña")
+      if (usuario == iniciosesion && password == iniciopassword) {
+        alert("Bienvenido al sistema: " + usuario)
+        break
+      }
+      else {
+        alert("Usuario o contraseña incorrectos, intenta nuevamente")
+      }
+      contador++
+    }
+    if (usuario == iniciosesion && password == iniciopassword) {
+      document.write("Inicio de sesión exitoso")
+    }
+    else {
+      document.write("Inicio de sesión fallido, ingresó ", intentos, " intentos fallidos.")
+    }
+</script>
