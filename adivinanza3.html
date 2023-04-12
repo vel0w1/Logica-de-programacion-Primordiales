@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<h2>Adivinanza de numeros #2</h2>
+
+<input> <!-- Se crea en pantalla un cuadro input -->
+
+<button>Enviar</button> <!-- Se crea en pantalla un botón con el texto "Enviar" -->
+
+<script>
+  var secretos = [1,2,3,4] // Variable con el numero secreto a adivinar
+  var input = document.querySelector("input") // La variable toma el valor que el usuario haya ingresado en el cuadro input
+  
+  function verify () {
+    var correcto = false
+    for (var posicion = 0; posicion < secretos.length; posicion++) {
+      // Se crea un for con iteración en las 4 posiciones del array
+      if (parseInt(input.value) == secretos[posicion]) {
+        // Se verifican las 4 posiciones si una de ellas es correcta
+        alert("Adivinó el numero")
+        correcto = true
+        break
+      }
+    }
+    if (correcto == false) {
+      alert("Equivocado")
+    }
+    input.value = "" // El cuadro input se reinicia
+    input.focus() // El cursor automaticamente vuelve al cuadro input
+}
+
+  var button = document.querySelector("button") // Se crea la acción del boton
+  button.onclick = verify // Cuando se presiona el boton se inicia la función verify()
+  
+</script>
