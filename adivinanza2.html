@@ -1,12 +1,12 @@
 <meta charset="UTF-8">
-<h2>Adivinanza #2</h2>
+<h2>Adivinanza de numeros #2</h2>
 
 <input> <!-- Se crea en pantalla un cuadro input -->
 
 <button>Enviar</button> <!-- Se crea en pantalla un botón con el texto "Enviar" -->
 
 <script>
-  var secreto = 5 // Variable con el numero secreto a adivinar
+  var secreto = Math.round(Math.random() * 10) // Variable con el numero secreto a adivinar
   var input = document.querySelector("input") // La variable toma el valor que el usuario haya ingresado en el cuadro input
   
   function verify () {
@@ -17,6 +17,8 @@
   else {
     alert("Numero equivocado")
   } // La función compara el valor del usuario con el numero secreto de la variable
+    input.value = "" // El cuadro input se reinicia
+    input.focus() // El cursor automaticamente vuelve al cuadro input
 }
 
   var button = document.querySelector("button") // Se crea la acción del boton
