@@ -6,7 +6,34 @@
 <button>Enviar</button> <!-- Se crea en pantalla un botón con el texto "Enviar" -->
 
 <script>
-  var secretos = [1,2,3,4] // Variable con el numero secreto a adivinar
+  function aleatorio () {
+    return Math.round(Math.random()*10)
+  } // La función crea numeros entre 0 y 10
+
+  function sortear (cantidad) {
+    var secretos = [] // Variable con los numeros secretos a adivinar
+    var contador = 1 
+    
+    while (contador <= cantidad) {
+      var numaleatorio = aleatorio() // La variable llama a la funcion aleatorio()
+      console.log(numaleatorio) // Se muestra en consola el numero generado
+      var encontrado = false
+      for (var posicion = 0; posicion < secretos.length; posicion++) {
+        // Se lee la posición de los numeros que se generen en secretos()
+        if (numaleatorio == secretos[posicion]) {
+          encontrado = true
+          break // Si entre la lectura el numero aleatorio generado es repetido se detiene la generación
+        }
+      }
+      if (encontrado == false) {
+        secretos.push(numaleatorio)
+        contador++ // Si entre la lectura el numero aleatorio generado no es repetido se agrega a la variable secretos() y se agrega una posicion al contador
+      }
+    }
+    return secretos
+  }
+  var secretos = sortear(4) // Se crean 4 numeros aleatorios
+  console.log(secretos) // Se muestra en consola los numeros generados
   var input = document.querySelector("input") // La variable toma el valor que el usuario haya ingresado en el cuadro input
   
   function verify () {
